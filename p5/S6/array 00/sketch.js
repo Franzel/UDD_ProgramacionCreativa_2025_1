@@ -4,7 +4,7 @@ let valoresA = [];
 
 function setup() {
   
-  valoresA[] = {30,60,90,180,250};
+  valoresA = [30,60,90,180,250];
   
   createCanvas(500, 500);
 }
