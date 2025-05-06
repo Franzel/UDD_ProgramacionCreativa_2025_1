@@ -1,32 +1,27 @@
 function setup() {
-  createCanvas(800, 800);
+  createCanvas(400, 400);
 }
 
 function draw() {
-  background(0);
-  //dibujemos la figura 3 veces en ubicaciones cualquiera
-  //miFigura(100,300);
-  //miFigura(400,400);
-  //miFigura(0,0);
-
+  background(255);
   // dibujemos varias veces para el lado
-  // for (let i = 0; i < 40; i++) {
-  //   miFigura(50 * i, 20 * i);
-  // }
+  for (let i = 0; i < 15; i++) {
+    miFigura(i * 30, 50, 35, color(255 - i * 20, 20, 0));
+  }
+
 
   //dibujemos varias veces en filas y columnas
-  for (let i = 0; i < width; i++) {
-    for (let j = 0; j < height; j++) {
-      miFigura(30 * i, 30 * j);
+  for (let i = 0; i < 15; i++) {
+    for (let j = 0; j < 15; j++) {
+      miFigura(i * 30, j * 30, 35, color(255 - i * 20, 20 * j, 0));
     }
   }
 }
 
-function miFigura(centroX, centroY) {
-  ellipse(centroX, centroY, 20, 20);
-  stroke(255);
-  line(centroX, centroY, centroX - 20, centroY - 20);
-  line(centroX, centroY, centroX + 20, centroY - 20);
-  line(centroX, centroY, centroX + 20, centroY + 20);
-  line(centroX, centroY, centroX - 20, centroY + 20);
+function miFigura(cx, cy, t, col) {
+  fill(col);
+  circle(cx, cy, t / 2);
+  circle(cx, cy, t / 20);
+  line(cx - t / 2, cy - t / 2, cx + t / 2, cy + t / 2);
+  line(cx + t / 2, cy - t / 2, cx - t / 2, cy + t / 2);
 }
